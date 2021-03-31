@@ -3,7 +3,6 @@
 
 Simple function to convert a table to a standard LaTex table format
 """
-
 def table2Latex(csvfile, header = True, sep = ",", dividedRows = True):
      with open(csvfile, "r") as csvtable:
         with open((csvfile[0:-4] + "_LaTex.txt"),"w") as latex:
@@ -18,11 +17,10 @@ def table2Latex(csvfile, header = True, sep = ",", dividedRows = True):
             for line in csvtable:   #loop through all the lines starting at line 2
                 l = line.strip().split(sep)
                 latexLine = " & ".join(l) + "\\\\\n"
-                if (dividedRows == True):
-                    latex.write("\hline\n")
                 latexLine = LaTexSyntax(latexLine)
                 latex.write(latexLine)
-            latex.write("\hline")
+                if (dividedRows == True):
+                    latex.write("\hline\n")
 
 """
 function to fix common latex syntax errors in text conversion. Cannot 
