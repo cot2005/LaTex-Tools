@@ -22,6 +22,7 @@ def table2Latex(csvfile, header = True, sep = ",", dividedRows = True):
                     latex.write("\hline\n")
                 latexLine = LaTexSyntax(latexLine)
                 latex.write(latexLine)
+            latex.write("\hline")
 
 """
 function to fix common latex syntax errors in text conversion. Cannot 
