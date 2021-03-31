@@ -28,6 +28,10 @@ be used to fix incomplete latex documents. currently only fixes % signs.
 Will update to include all common latex symbols.
 """
 def LaTexSyntax(inputstring):
+    inputstring = inputstring.replace(">", "\textgreater")
+    inputstring = inputstring.replace("<", "\textless")
+    inputstring = inputstring.replace("$", "\$")
+    inputstring = inputstring.replace("_", "\_")
     inputstring = inputstring.replace("%", "\%")
     inputstring = inputstring.replace("#", "\#")
     return(inputstring)
