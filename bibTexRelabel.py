@@ -1,7 +1,8 @@
 """
 @author: Colin
 
-author, journal, pmcid, year
+simple function to automatically make custom labels for a BibTex formatted bibliography.
+can currently make labels with any combination or order of author, journal, PMCID, and year article information.
 """
 
 
