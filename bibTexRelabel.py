@@ -2,7 +2,8 @@
 @author: Colin
 
 simple function to automatically make custom labels for a BibTex formatted bibliography.
-can currently make labels with any combination or order of author, journal, PMID, and year article information.
+can currently make labels with any combination or order of author, journal, 
+D, and year article information.
 """
 
 
@@ -28,8 +29,8 @@ def bibTexRelabel(bibLibrary, labelFormat = "ajpy", fieldsep = ""):
                         refDict["j"] = journal[bracket:]
                     if ("pmid" in line.split(" = ")[0]):
                         bracket = line.index("{") + 1
-                        pmcd = line.split("}")[0]
-                        refDict["p"] = pmcd[bracket:]
+                        pmid = line.split("}")[0]
+                        refDict["p"] = pmid[bracket:]
                     if ("year" line.split(" = ")[0]):
                         bracket = line.index("{") + 1
                         year = line.split("}")[0]
