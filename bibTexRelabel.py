@@ -8,6 +8,8 @@ D, and year article information.
 
 
 def bibTexRelabel(bibLibrary, labelFormat = "ajpy", fieldsep = ""):
+    with open(bibLibrary, "a",encoding='utf-8-sig') as bib:   #adds a "\n" to end of file
+        bib.write("\n")
     labelList = list(labelFormat)
     with open(bibLibrary, "r", encoding='utf-8-sig') as bib:
         with open((bibLibrary[0:-4] + "_LaTex.txt"),"w") as latex:
