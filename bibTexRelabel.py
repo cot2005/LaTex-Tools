@@ -2,7 +2,7 @@
 @author: Colin
 
 simple function to automatically make custom labels for a BibTex formatted bibliography.
-can currently make labels with any combination or order of author, journal, PMCID, and year article information.
+can currently make labels with any combination or order of author, journal, PMID, and year article information.
 """
 
 
@@ -18,19 +18,19 @@ def bibTexRelabel(bibLibrary, labelFormat = "ajpy", fieldsep = ""):
                 while refLine == True:   #loop to read each line in each entry
                     line = bib.readline()
                     refEntry.append(line)
-                    if (line.split(" = ")[0][3:] == "author"):
+                    if ("author" in line.split(" = ")[0]):
                         bracket = line.index("{") + 1
                         author = line.split(",")[0]
                         refDict["a"] = author[bracket:]
-                    if (line.split(" = ")[0][3:] == "journal"):
+                    if ("journal" in line.split(" = ")[0]):
                         bracket = line.index("{") + 1
                         journal = line.split("}")[0]
                         refDict["j"] = journal[bracket:]
-                    if (line.split(" = ")[0][3:] == "pmcid"):
+                    if ("pmid" in line.split(" = ")[0]):
                         bracket = line.index("{") + 1
-                        pmcid = line.split("}")[0]
-                        refDict["p"] = pmcid[bracket:]
-                    if (line.split(" = ")[0][3:] == "year"):
+                        pmcd = line.split("}")[0]
+                        refDict["p"] = pmcd[bracket:]
+                    if ("year" line.split(" = ")[0]):
                         bracket = line.index("{") + 1
                         year = line.split("}")[0]
                         refDict["y"] = year[bracket:]
