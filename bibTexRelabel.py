@@ -31,7 +31,7 @@ def bibTexRelabel(bibLibrary, labelFormat = "ajpy", fieldsep = ""):
                         bracket = line.index("{") + 1
                         pmid = line.split("}")[0]
                         refDict["p"] = pmid[bracket:]
-                    if ("year" line.split(" = ")[0]):
+                    if ("year" in line.split(" = ")[0]):
                         bracket = line.index("{") + 1
                         year = line.split("}")[0]
                         refDict["y"] = year[bracket:]
