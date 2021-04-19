@@ -58,5 +58,7 @@ def bibTexRelabel(bibLibrary, labelFormat = "ajpy", fieldsep = ""):
                     for j in refEntry:
                         latex.write(j)
                 latex.write("\n")
-                next(bib)
                 label = bib.readline()
+                if ("@" not in label):   #determines if entries are separated by an additional \n
+                    label = bib.readline()
+                
